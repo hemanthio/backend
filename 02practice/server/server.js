@@ -4,7 +4,10 @@ const app = express();
 
 app.get("/",(req,res)=>{
 res.status(200).send('welcome to mern')
+
 })
+
+
 
 const PORT = 5000
 
