@@ -1,10 +1,13 @@
 const express = require("express")
 
 const app = express();
+const router = require("./router/auth-router")
 
-app.get("/",(req,res)=>{
-    res.status(200).send("learing mern stack")
-})
+app.use("/",router)
+
+// app.get("/",(req,res)=>{
+//     res.status(200).send("learing mern stack")
+// })
 
 const PORT = 5000;
 app.listen(PORT,()=>{
