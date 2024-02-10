@@ -95,27 +95,65 @@ function colorChange(color,delay){
  return new Promise((resolve,reject)=>{
     setTimeout(()=>{
         h1.style.color = color;
+        console.log(`color changed to ${color}`)
         resolve("color changed")
     },delay)
  })
 }
 
-colorChange("red",1000)
-.then((result)=>{
-    console.log("color changed to red");
-    console.log(result)
-    return colorChange("green",1000);
-})
-.then((result)=>{
-    console.log("color changed to green");
-    console.log(result)
-    return colorChange("yellow",1000)
-})
-.then((result)=>{
-    console.log("color changed to yellow");
-    console.log(result)
-})
-.catch((error)=>{
-    console.log("error occured")
-    console.log(error)
-})
+
+//promise method for color change
+// colorChange("red",1000)
+// .then((result)=>{
+//     console.log("color changed to red");
+//     console.log(result)
+//     return colorChange("green",1000);
+// })
+// .then((result)=>{
+//     console.log("color changed to green");
+//     console.log(result)
+//     return colorChange("yellow",1000)
+// })
+// .then((result)=>{
+//     console.log("color changed to yellow");
+//     console.log(result)
+// })
+// .catch((error)=>{
+//     console.log("error occured")
+//     console.log(error)
+// })
+
+
+
+
+// async function greet(){
+ 
+//     return "hello world"
+//   throw "some random error"
+// }
+
+// greet()
+// .then(()=>{
+//     console.log("promise resolved")
+// })
+// .catch(()=>{
+//     console.log("promise rejected")
+// })
+
+
+
+
+//async method
+async function demo(){
+    try {
+        await colorChange("red",1000)
+        await colorChange("green",1000)
+        await colorChange("blue",1000)
+        await colorChange("yellow",1000)
+    } catch (error) {
+        console.log("error occured",error)
+    }
+
+}
+
+demo()
