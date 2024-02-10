@@ -51,40 +51,71 @@
 // )
 
 
-function savetodB (data){
-    let dataconnection = Math.floor(Math.random()*10)+1;
-    return new Promise((resolve,reject)=>{
-        if(dataconnection>4){
-            resolve("connection is secured");
-        }else{
-            reject("failed connection")
-        }
-    })
+// function savetodB (data){
+//     let dataconnection = Math.floor(Math.random()*10)+1;
+//     return new Promise((resolve,reject)=>{
+//         if(dataconnection>4){
+//             resolve("connection is secured");
+//         }else{
+//             reject("failed connection")
+//         }
+//     })
+// }
+
+// savetodB("hello world")
+// .then(()=>{
+//     console.log("success")
+// })
+// .catch(()=>{
+//     console.log("failed")
+// })
+
+// function datab(){
+// new Promise((resolve,reject)=>{
+// if (condition) {
+//     resolve()
+// } else {
+//     reject()
+// }
+// })
+// }
+
+// datab("hii")
+// .then(()=>{
+//     console.log("hii namaste");
+//     return datab ("whatsup")
+// })
+// .then(()=>{
+
+// })
+
+h1=document.querySelector("h1")
+
+function colorChange(color,delay){
+ return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        h1.style.color = color;
+        resolve("color changed")
+    },delay)
+ })
 }
 
-savetodB("hello world")
-.then(()=>{
-    console.log("success")
+colorChange("red",1000)
+.then((result)=>{
+    console.log("color changed to red");
+    console.log(result)
+    return colorChange("green",1000);
 })
-.catch(()=>{
-    console.log("failed")
+.then((result)=>{
+    console.log("color changed to green");
+    console.log(result)
+    return colorChange("yellow",1000)
 })
-
-function datab(){
-new Promise((resolve,reject)=>{
-if (condition) {
-    resolve()
-} else {
-    reject()
-}
+.then((result)=>{
+    console.log("color changed to yellow");
+    console.log(result)
 })
-}
-
-datab("hii")
-.then(()=>{
-    console.log("hii namaste");
-    return datab ("whatsup")
-})
-.then(()=>{
-    
+.catch((error)=>{
+    console.log("error occured")
+    console.log(error)
 })
