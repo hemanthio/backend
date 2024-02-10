@@ -89,17 +89,17 @@
 
 // })
 
-h1=document.querySelector("h1")
+// h1=document.querySelector("h1")
 
-function colorChange(color,delay){
- return new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-        h1.style.color = color;
-        console.log(`color changed to ${color}`)
-        resolve("color changed")
-    },delay)
- })
-}
+// function colorChange(color,delay){
+//  return new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         h1.style.color = color;
+//         console.log(`color changed to ${color}`)
+//         resolve("color changed")
+//     },delay)
+//  })
+// }
 
 
 //promise method for color change
@@ -144,16 +144,16 @@ function colorChange(color,delay){
 
 
 //async method
-async function demo(){
-    try {
-        await colorChange("red",1000)
-        await colorChange("green",1000)
-        await colorChange("blue",1000)
-        await colorChange("yellow",1000)
-    } catch (error) {
-        console.log("error occured",error)
-    }
+// async function demo(){
+//     try {
+//         await colorChange("red",1000)
+//         await colorChange("green",1000)
+//         await colorChange("blue",1000)
+//         await colorChange("yellow",1000)
+//     } catch (error) {
+//         console.log("error occured",error)
+//     }
 
-}
+// }
 
-demo()
+// demo()
