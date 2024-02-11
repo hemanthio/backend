@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require("axios")
 
 // let url = "https://catfact.ninja/facts"
 
@@ -15,12 +15,25 @@ const axios = require('axios');
 
 
 //using axios
-async function factjoke(){
+// async function factjoke(){
+//     try {
+//         let res = await axios.get("https://catfact.ninja/fact");
+//         console.log(res)
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+// factjoke()
+
+let url = "http://universities.hipolabs.com/search?name=middle"
+
+let country ="nepal"
+
+async function getColleges(){
     try {
-        let res = await axios.get("https://catfact.ninja/fact");
-        console.log(res)
+      let res =  await axios.get(url+country);
+      console.log(res)
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
 }
-factjoke()
