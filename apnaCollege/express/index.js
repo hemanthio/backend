@@ -21,7 +21,12 @@ app.get("/",(req,res)=>{
     res.send("<h1>vattakai</h1>")
 })
 
-app.get("/:username",(req,res)=>{
+app.get("/:username/:id",(req,res)=>{
     let {username,id} =req.params
     res.send(`<h1>welcome to ${username} </h1>`)
+})
+
+app.get("/search",(req,res)=>{
+    let {q} =req.query
+    res.send(`<h1>you search results for ${q}</h1>`)
 })
