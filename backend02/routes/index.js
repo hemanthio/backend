@@ -16,5 +16,20 @@ name:"hemanth"
  res.send(createuser);
 })
 
+// to get data from all users
+
+// router.get("/allusers",async function(req,res){
+//   let allusers = await userModel.find();
+//   res.send(allusers)
+// })
+
+// tofind one user
+router.get("/allusers",async function(req,res){
+  let allusers = await userModel.findOne({username:"hemanth"});
+  res.send(allusers)
+})
+
+
+
 
 module.exports = router;
