@@ -1,11 +1,7 @@
 const fs = require("fs")
-const express = require("express")
-
-function callback(err,data){
-    console.log(data)
-}
-
-fs.readFile("a.txt","utf-8",callback)
+const express = require('express')
+const app = express()
+const port = 3000
 
 function calculate(counter) {
     var sum=0;
@@ -15,5 +11,24 @@ function calculate(counter) {
     return sum
 }
 
-const sumofCalculate=calculate(100);
-console.log(sumofCalculate);
+
+// app.get('/', (req, res) => {
+//     const sumOfIntegers = calculate(100)
+//   res.send(`sum of numbers is ${sumOfIntegers}`)
+// })
+app.get('/handlesum', (req, res) => {
+    var counter = req.query.counter
+    const handlesumof =calculate(counter)
+    res.send(`sum is ${handlesumof}`)
+   
+  res.send(`hello world namste how are you`)
+})
+
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
+
+
+
