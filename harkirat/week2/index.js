@@ -1,11 +1,20 @@
 const fs = require("fs")
 const express = require('express')
+var bodyParser =require("body-parser")
 const app = express()
 const port = 3000
 
+app.use(bodyParser.json())
+
+// app.use(middleware)
+// function middleware(req,res,next){
+//   // res.send("error from middleware")
+//   next();
+// }
+
 function calculate(counter) {
     var sum=0;
-    for(var i=0;i<counter;i++){
+    for(var i=0;i<=counter;i++){
         sum = sum + i;
     }
     return sum
@@ -18,12 +27,18 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/handlesum', (req, res) => {
-    var counter = req.query.counter
+app.post('/handlesum', (req, res) => {
+    var counter = req.body.counter
     const handlesumof =calculate(counter)
     res.send(`sum is ${handlesumof}`)
    
-  res.send(`hello world namste how are you`)
+})
+
+app.post('/han', (req, res) => {
+  var number= req.headers.number
+  
+  res.send(`sum is ${number}`)
+ 
 })
 
 // app.get('/:username', (req, res) => {
@@ -58,6 +73,7 @@ app.delete("/handless",(req,res)=>{
 
 
 app.listen(port, () => {
+
   console.log(`Example app listening on port ${port}`)
 })
 
