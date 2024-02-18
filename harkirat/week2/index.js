@@ -20,22 +20,36 @@ function calculate(counter) {
     return sum
 }
 
+function calculater(counter) {
+  var sum=1;
+  for(var i=1;i<=counter;i++){
+      sum = sum*i;
+  }
+  return sum
+}
 
-app.get('/', (req, res) => {
-    const sumOfIntegers = calculate(100)
-  res.send(`sum of numbers is ${sumOfIntegers}`)
-})
+
+
+// app.get('/', (req, res) => {
+//     const sumOfIntegers = calculate(100)
+//   res.send(`sum of numbers is ${sumOfIntegers}`)
+// })
 
 
 app.post('/handlesum', (req, res) => {
     var counter = req.body.counter
     const handlesumof =calculate(counter)
-    res.send(`sum is ${handlesumof}`)
+    const multiplier =calculater(counter)
+    const objectans ={
+      sum:handlesumof,
+      multiply:multiplier,
+    }
+    res.send(objectans)
    
 })
 
 app.post('/han', (req, res) => {
-  var number= req.headers.number
+  var number= req.body.number
   
   res.send(`sum is ${number}`)
  
@@ -48,6 +62,26 @@ app.post('/han', (req, res) => {
  
 
 // })
+
+function givePage(req,res){
+res.send(`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello</h1>
+    <h2>namste bhayya</h2>
+</body>
+</html>
+`)
+}
+app.get("/",givePage)
+
+
 
 app.get('/username', (req, res) => {
   var username= req.query.username
