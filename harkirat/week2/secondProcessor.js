@@ -9,4 +9,4 @@ var sendObj={
     method:"GET"
 }
 
-fetch("http://localhost:3000/handleSum",sendObj).then(callback)
+fetch("http://localhost:3000/handlesum?counter=100",sendObj).then(callback)

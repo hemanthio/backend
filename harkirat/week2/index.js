@@ -1,10 +1,10 @@
 const fs = require("fs")
 const express = require('express')
-var bodyParser =require("body-parser")
+// var bodyParser =require("body-parser")
 const app = express()
 const port = 3000
 
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
 
 // app.use(middleware)
 // function middleware(req,res,next){
@@ -37,7 +37,7 @@ function calculater(counter) {
 
 
 app.post('/handlesum', (req, res) => {
-    var counter = req.body.counter
+    var counter = req.query.counter
     const handlesumof =calculate(counter)
     const multiplier =calculater(counter)
     const objectans ={
