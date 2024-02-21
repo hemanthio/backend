@@ -89,17 +89,17 @@
 
 // })
 
-// h1=document.querySelector("h1")
+h1=document.querySelector("h1")
 
-// function colorChange(color,delay){
-//  return new Promise((resolve,reject)=>{
-//     setTimeout(()=>{
-//         h1.style.color = color;
-//         console.log(`color changed to ${color}`)
-//         resolve("color changed")
-//     },delay)
-//  })
-// }
+function colorChange(color,delay){
+ return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        h1.style.color = color;
+        console.log(`color changed to ${color}`)
+        resolve("color changed")
+    },delay)
+ })
+}
 
 
 //promise method for color change
