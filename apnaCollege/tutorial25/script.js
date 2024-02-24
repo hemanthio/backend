@@ -62,23 +62,23 @@
 //     })
 // }
 
-// savetodB("hello world")
-// .then(()=>{
-//     console.log("success")
-// })
-// .catch(()=>{
-//     console.log("failed")
-// })
+savetodB("hello world")
+.then(()=>{
+    console.log("success")
+})
+.catch(()=>{
+    console.log("failed")
+})
 
-// function datab(){
-// new Promise((resolve,reject)=>{
-// if (condition) {
-//     resolve()
-// } else {
-//     reject()
-// }
-// })
-// }
+function datab(){
+new Promise((resolve,reject)=>{
+if (condition) {
+    resolve()
+} else {
+    reject()
+}
+})
+}
 
 // datab("hii")
 // .then(()=>{
